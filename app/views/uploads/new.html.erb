@@ -1,0 +1,21 @@
+<h1>Add New Upload</h1>
+
+<%= form_for @upload, url: uploads_path, html: { multipart: true } do |form| %>
+  <% if @upload.errors.any? %>
+    <ul>
+      <% @upload.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <br>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+  <br>
+  <%= form.label :file %>
+  <%= form.file_field :file %>
+  <br>
+  <%= form.submit %>
+<% end %>
