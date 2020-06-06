@@ -1,5 +1,5 @@
 class UploadsController < ApplicationController
-  before_action :set_upload, only: [:destroy, :share]
+  before_action :set_upload, only: [:destroy, :generate, :show]
 
   def new
     @upload = Upload.new

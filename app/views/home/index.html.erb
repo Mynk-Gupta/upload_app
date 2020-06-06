@@ -15,7 +15,8 @@
         <td><%=upload.title %></td>
         <td><%=upload.description %></td>
         <td><%=upload.file.url %></td>
-        <td><%=link_to "Share", generate_upload_path(upload) %></td>
+        <td><%=link_to "Generate Tiny Url", generate_upload_path(upload) %></td>
+        <td><%=link_to "Share", upload_path(upload) %></td>
         <td><%=link_to "Delete", upload_path(upload), method: :delete %></td>
       </tr>
     <% end %>

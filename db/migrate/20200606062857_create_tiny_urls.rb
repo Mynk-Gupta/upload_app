@@ -2,7 +2,7 @@ class CreateTinyUrls < ActiveRecord::Migration[5.2]
   def change
     create_table :tiny_urls do |t|
       t.string :code
-      t.references :upload, foreign_key: true
+      t.integer :upload_id
       t.timestamps
     end
   end

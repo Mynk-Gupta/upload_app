@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 2020_06_06_062857) do
 
   create_table "tiny_urls", force: :cascade do |t|
     t.string "code"
-    t.bigint "upload_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["upload_id"], name: "index_tiny_urls_on_upload_id"
+    t.integer "upload_id"
+    t.integer "#<ActiveRecord::ConnectionAdapters::PostgreSQL::TableDefinition"
   end
 
   create_table "uploads", force: :cascade do |t|
@@ -48,6 +48,5 @@ ActiveRecord::Schema.define(version: 2020_06_06_062857) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "tiny_urls", "uploads"
   add_foreign_key "uploads", "users"
 end
